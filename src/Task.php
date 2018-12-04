@@ -179,7 +179,7 @@ class Task extends TotemModel
                     ->delete();
             } else {
                 self::results()
-                    ->where('ran_at', '<', Carbon::now()->subDays($this->auto_cleanup_num - 1))
+                    ->where('ran_at', '<', Carbon::now()->subDays($this->auto_cleanup_num))
                     ->delete();
             }
         }
