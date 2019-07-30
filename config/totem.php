@@ -233,4 +233,8 @@ return [
     'overlapping' => [
         'mutex_expiry' => env('TOTEM_OVERLAPPING_MUTEX_EXPIRY', 1440), // in minutes
     ],
+    'pagination' => [
+        'tasks_per_page' => env('TOTEM_TASKS_PER_PAGE', 20),
+        'results_per_page' => env('TOTEM_RESULTS_PER_PAGE', 10),
+    ],
 ];

@@ -106,7 +106,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                @forelse($results = $task->results()->orderByDesc('created_at')->paginate(10) as $result)
+                @forelse($results = $task->results()->orderByDesc('created_at')->paginate(config('totem.pagination.results_per_page')) as $result)
                     <tr>
                         <td>{{$result->ran_at->toDateTimeString()}}</td>
                         <td>{{ number_format($result->duration / 1000 , 2)}} seconds</td>

@@ -42,7 +42,7 @@ class TasksController extends Controller
                 ->when(request('q'), function ($query) {
                     $query->where('description', 'LIKE', '%'.request('q').'%');
                 })
-                ->paginate(20),
+                ->paginate(config('totem.pagination.tasks_per_page')),
         ]);
     }
 
